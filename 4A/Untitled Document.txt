@@ -1,0 +1,78 @@
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 33
+Server version: 10.4.14-MariaDB Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database web_games;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> show databases;
+
++--------------------+
+| Database           |
++--------------------+
+| UD_Paving          |
+| ci4                |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
+| web_games          |
++--------------------+
+8 rows in set (0.001 sec)
+
+MariaDB [(none)]> use web_games;
+Database changed
+MariaDB [web_games]> create table heroes_tb(
+    -> id int,
+    -> name varchar(30),
+    -> type_id int,
+    -> photo varchar(30));
+Query OK, 0 rows affected (0.479 sec)
+
+MariaDB [web_games]> create table type_tb(
+    -> id int,
+    -> name varchar(30));
+Query OK, 0 rows affected (0.280 sec)
+
+MariaDB [(none)]> use web_games;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [web_games]> show tables;
++---------------------+
+| Tables_in_web_games |
++---------------------+
+| heroes_tb           |
+| type_tb             |
++---------------------+
+2 rows in set (0.001 sec)
+
+MariaDB [web_games]> desc heroes_tb;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int(11)     | YES  |     | NULL    |       |
+| name    | varchar(30) | YES  |     | NULL    |       |
+| type_id | int(11)     | YES  |     | NULL    |       |
+| photo   | varchar(30) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.002 sec)
+
+MariaDB [web_games]> desc type_tb;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | YES  |     | NULL    |       |
+| name  | varchar(30) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.002 sec)
+
+MariaDB [web_games]> 
+
